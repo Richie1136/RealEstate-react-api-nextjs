@@ -6,7 +6,6 @@ const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, imageUrl, l
   // M stands for margin
   // P stands for Padding
   <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
-    {purpose}
     <Image src={imageUrl} width={500} height={300} alt="Banner pic" />
     <Box p="5">
       <Text color="gray.500" fontSize="sm" fontWeight="medium">{purpose}</Text>
