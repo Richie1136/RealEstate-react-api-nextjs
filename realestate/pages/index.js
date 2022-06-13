@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Flex, Box, Text, Button } from '@chakra-ui/react'
 import { baseURL, FetchApi } from '../utils/fetchapi'
+import Property from '../components/property/Property'
 
 
 const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, imageUrl, linkName }) => (
@@ -20,7 +21,9 @@ const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, imageUrl, l
   </Flex>
 )
 
-const Home = () => {
+const Home = ({ propertiesForSale, propertiesForRent }) => {
+  console.log(propertiesForRent)
+  console.log(propertiesForSale)
   return (
     <Box>
       <Banner purpose="Rent a Home" title1="Rental Homes for" title2="Everyone" desc1="Explore Homes and Apartments"
@@ -28,11 +31,17 @@ const Home = () => {
       />
       <Flex flexWrap="wrap">
         {/* Fetch properties and map over them */}
+        {propertiesForRent.map((property) => {
+          return <Property key={property.id} property={property} />
+        })}
       </Flex>
       <Banner purpose="Buy a Home" title1="Find, Buy and Own Your" title2="Dream Home" desc1="Explore Homes and Apartments"
         desc2="and more" buttonText="Explore Buying" linkName="/search?purpose=for-sale" imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
       {/* Fetch properties and map over them */}
+      {propertiesForSale.map((property) => {
+        return <Property key={property.id} property={property} />
+      })}
     </Box>
   )
 }
