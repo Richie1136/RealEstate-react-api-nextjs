@@ -37,4 +37,13 @@ const Home = () => {
   )
 }
 
+export async function getStaticProps() {
+  // getStaticProps ensures that your pre-rendered pages contain data that 
+  // you might need to wait for
+  // fetch data from an API
+
+  const propertyForSale = await FetchApi(`${baseURL}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`)
+  const propertyForRent = await FetchApi(`${baseURL}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`)
+}
+
 export default Home
