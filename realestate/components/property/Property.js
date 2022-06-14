@@ -6,18 +6,22 @@ import { BsGridFill } from 'react-icons/bs'
 import { GoVerified } from 'react-icons/go'
 import millify from "millify"
 
-const Property = ({ property }) => {
-  console.log(property)
-  return (
-    <>
-      <div>
-        <h2>Title: {property.title}</h2>
-        <br />
-        <p>Price: ${millify(property.price)}</p>
-        <img src={property.coverPhoto.url} alt='home img' />
-      </div>
-    </>
-  )
-}
+const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, baths, area, agency, isVerified, externalID } }) => (
+  <Link href={`/property/${externalID}`} passHref >
+    <div>
+      <h2>Title: {title}</h2>
+      <h4>Rooms: {rooms}</h4>
+      <h4>Baths: {baths}</h4>
+      <h5>Area: {area}</h5>
+      <h5>IsVerified: {isVerified}</h5>
+      <h5>Agency: {agency.name}</h5>
+      <h6>Rent Frequency: {rentFrequency}</h6>
+      <br />
+      <p>Price: ${millify(price)}</p>
+      <img src={coverPhoto.url} alt='home img' />
+    </div>
+  </Link>
+)
+
 
 export default Property
