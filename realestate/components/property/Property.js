@@ -10,22 +10,32 @@ let defaultImage = 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914
 
 const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, baths, area, agency, isVerified, externalID } }) => (
   // p stands for padding, w stands for width
-  <Link href={`/property/${externalID}`} passHref>
+  < Link href={`/property/${externalID}`} passHref >
     <Flex flexWrap="wrap" w="420px" p="5px" paddingTop="0" justifyContent="flex-start" cursor="pointer">
       <Box>
         <Image src={coverPhoto ? coverPhoto.url : defaultImage} alt='house' width={500} height={500} />
+      </Box>
+      <Box w='full'>
+        <Flex paddingTop='2px' alignItems="center" justifyContent="space-between">
+          <Flex alignItems="center">
+            <Box paddingRight='3px' color="green.400">
+              {isVerified && <GoVerified />}
+              <Text fontWeight="bold" fontSize="lg">
+                USD ${millify(price * 0.27)}{rentFrequency && `/${rentFrequency}`}
+              </Text>
+            </Box>
+          </Flex>
+        </Flex>
       </Box>
       <h2>Title: {title}</h2>
       <h4>Rooms: {rooms}</h4>
       <h4>Baths: {baths}</h4>
       <h5>Area: {area}</h5>
-      <h5>IsVerified: {isVerified}</h5>
       <h5>Agency: {agency.name}</h5>
       <h6>Rent Frequency: {rentFrequency}</h6>
       <br />
-      <p>Price: ${millify(price)}</p>
     </Flex>
-  </Link>
+  </Link >
 )
 
 
