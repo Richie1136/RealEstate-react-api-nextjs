@@ -26,12 +26,15 @@ const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, 
             </Text>
           </Flex>
           <Box >
-            <Avatar size='sm' src={agency?.logo?.url}></Avatar>
+            <Avatar size='sm' src={agency?.logo?.url} />
           </Box>
+        </Flex>
+        <Flex alignItems="center" p="1" justifyContent="space-between" w="250px" color="blue.400">
+          <h4>Rooms: {rooms} <FaBed /> | <FaBath /></h4>
+
         </Flex>
       </Box>
       <h2>Title: {title}</h2>
-      <h4>Rooms: {rooms}</h4>
       <h4>Baths: {baths}</h4>
       <h5>Area: {area}</h5>
       <h5>Agency: {agency.name}</h5>
