@@ -30,16 +30,12 @@ const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, 
           </Box>
         </Flex>
         <Flex alignItems="center" p="1" justifyContent="space-between" w="250px" color="blue.400">
-          Rooms: {rooms}<FaBed /> | Baths: {baths}<FaBath /> | {millify(area)} sqft <BsGridFill />
+          {rooms}<FaBed /> |  {baths}<FaBath /> | {millify(area)} sqft <BsGridFill />
         </Flex>
         <Text fontSize="lg">
-          {title.length > 30 ? title.substr(0, 30) : title}
+          {title.length > 30 ? `${title.substr(0, 30)}...` : title}
         </Text>
       </Box>
-      <h2>Title: {title}</h2>
-      <h5>Area: {area}</h5>
-      <h5>Agency: {agency.name}</h5>
-      <br />
     </Flex>
   </Link >
 )
