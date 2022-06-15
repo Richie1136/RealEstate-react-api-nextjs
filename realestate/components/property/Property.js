@@ -20,11 +20,14 @@ const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, 
           <Flex alignItems="center">
             <Box paddingRight='3px' color="green.400">
               {isVerified && <GoVerified />}
-              <Text fontWeight="bold" fontSize="lg">
-                USD ${millify(price * 0.27)}{rentFrequency && `/${rentFrequency}`}
-              </Text>
             </Box>
+            <Text fontWeight="bold" fontSize="lg">
+              USD ${millify(price * 0.27)}{rentFrequency && `/${rentFrequency}`}
+            </Text>
           </Flex>
+          <Box >
+            <Avatar size='sm' src={agency?.logo?.url}></Avatar>
+          </Box>
         </Flex>
       </Box>
       <h2>Title: {title}</h2>
@@ -32,7 +35,6 @@ const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, 
       <h4>Baths: {baths}</h4>
       <h5>Area: {area}</h5>
       <h5>Agency: {agency.name}</h5>
-      <h6>Rent Frequency: {rentFrequency}</h6>
       <br />
     </Flex>
   </Link >
