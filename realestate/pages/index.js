@@ -38,9 +38,11 @@ const Home = ({ propertiesForSale, propertiesForRent }) => {
         desc2="and more" buttonText="Explore Buying" linkName="/search?purpose=for-sale" imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
       {/* Fetch properties and map over them */}
-      {propertiesForSale.map((property) => {
-        return <Property key={property.id} property={property} />
-      })}
+      <Flex flexWrap="wrap">
+        {propertiesForSale.map((property) => {
+          return <Property key={property.id} property={property} />
+        })}
+      </Flex>
     </Box>
   )
 }
