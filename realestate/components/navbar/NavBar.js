@@ -8,10 +8,10 @@ const NavBar = () => {
       <nav>
         <ul>
           <li>
-            <Link href='/'>All Meetups</Link>
+            <Link href='/'>All Properties</Link>
           </li>
           <li>
-            <Link href='/newmeetup'>Add New Meetup</Link>
+            <Link href='/newmeetup'>Property Data</Link>
           </li>
         </ul>
       </nav>

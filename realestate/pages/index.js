@@ -22,8 +22,7 @@ const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, imageUrl, l
 )
 
 const Home = ({ propertiesForSale, propertiesForRent }) => {
-  console.log(propertiesForRent)
-  console.log(propertiesForSale)
+
   return (
     <Box>
       <Banner purpose="Rent a Home" title1="Rental Homes for" title2="Everyone" desc1="Explore Homes and Apartments"
