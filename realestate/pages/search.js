@@ -55,30 +55,11 @@ export default Search
 
 
 
-export async function getStaticProps({ query }) {
+export async function getServerSideProps({ query }) {
 
   // Getting the query through the URL
 
-  // getStaticProps ensures that your pre-rendered pages contain data that 
-  // you might need to wait for
-  // fetch data from an API
-
-  // From the API
-  //   const axios = require("axios");
-
-  // const options = {
-  //   method: 'GET',
-  //   url: 'https://bayut.p.rapidapi.com/properties/list',
-  //   params: {
-  //     locationExternalIDs: '5002,6020',
-  //     purpose: 'for-rent',
-  //     hitsPerPage: '25',
-  //     page: '0',
-  //     lang: 'en',
-  //     sort: 'city-level-score',
-  //     rentFrequency: 'monthly',
-  //     categoryExternalID: '4'
-  //   },
+  // Use getServerSideProps to fetch data on each request
 
   const purpose = query.purpose || 'for-sale'
   const rentFrequency = query.rentFrequency || 'monthly'
@@ -96,7 +77,7 @@ export async function getStaticProps({ query }) {
 
   return {
     props: {
-      propertiesForSale: propertyForSale?.hits,
+      properties: data?.hits,
     }
   }
 }
