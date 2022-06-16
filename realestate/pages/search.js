@@ -3,9 +3,14 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { Flex, Box, Text, Icon } from '@chakra-ui/react'
 import { BsFilter } from 'react-icons/bs'
+import SearchFilters from '../components/searchfilters/SearchFilters'
 
 const Search = () => {
   const [searchFilters, setSearchFilters] = useState(false)
+
+  const handleClick = () => {
+    setSearchFilters(prevFilter => !prevFilter)
+  }
 
   const router = useRouter()
   return (
@@ -20,10 +25,12 @@ const Search = () => {
         fontSize="large"
         justifyContent="center"
         alignItems="center"
+        onClick={handleClick}
       >
         <Text>Search Property By Filters</Text>
         <Icon paddingLeft="2" w="7" as={BsFilter}></Icon>
       </Flex>
+      {searchFilters && <SearchFilters />}
     </Box>
   )
 }
