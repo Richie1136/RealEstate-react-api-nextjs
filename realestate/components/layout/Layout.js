@@ -1,4 +1,3 @@
-import React from 'react'
 import Footer from '../footer/Footer.js'
 import NavBar from '../navbar/NavBar.js'
 import Head from 'next/head.js'
