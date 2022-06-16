@@ -4,6 +4,7 @@ import { Menu, MenuButton, MenuList, MenuItem, IconButton, Flex, Box, Spacer } f
 import { FcMenu, FcHome, FcAbout } from 'react-icons/fc'
 import { BsSearch } from 'react-icons/bs'
 import { FiKey } from 'react-icons/fi'
+import { BiPurchaseTag } from 'react-icons/bi'
 
 const NavBar = () => (
   <Flex p="2" borderBottom="1px" borderColor="gray.100">
@@ -18,14 +19,14 @@ const NavBar = () => (
           <Link href='/' passHref>
             <MenuItem icon={<FcHome />}>Home</MenuItem>
           </Link>
-          <Link href='/' passHref>
-
+          <Link href='/search' passHref>
+            <MenuItem icon={<BsSearch />}>Search</MenuItem>
           </Link>
-          <Link href='/' passHref>
-
+          <Link href='/search?purpose=for-sale' passHref>
+            <MenuItem icon={<BiPurchaseTag />}>Buy Property</MenuItem>
           </Link>
-          <Link href='/' passHref>
-
+          <Link href='/search?purpose=for-rent' passHref>
+            <MenuItem icon={<FiKey />}>Rent Property</MenuItem>
           </Link>
         </MenuList>
       </Menu>
