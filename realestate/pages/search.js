@@ -64,12 +64,12 @@ export async function getServerSideProps({ query }) {
   const purpose = query.purpose || 'for-sale'
   const rentFrequency = query.rentFrequency || 'monthly'
   const minPrice = query.minPrice || '0'
-  const maxPrice = query.maxPrice || '100000000'
+  const maxPrice = query.maxPrice || '1000000'
   const roomsMin = query.minRooms || '0'
   const bathsMin = query.minBaths || '0'
   const sort = query.sort || 'price-desc'
   const areaMax = query.areaMax || '35000'
-  const locationExternalIDs = query.locationExternalIDs || '5001'
+  const locationExternalIDs = query.locationExternalIDs || '5002'
   const categoryExternalID = query.categoryExternalID || '4'
 
   const data = await FetchApi(`${baseURL}/properties/list?locationExternalIDs=${locationExternalIDs}&purpose=${purpose}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}`)
