@@ -24,6 +24,9 @@ const SearchFilters = () => {
       {filters?.map((filter) => (
         <Box key={filter.queryName}>
           <Select p='2' w='fit-content' placeholder={filter.placeholder} onChange={handleChange}>
+            {filter?.items?.map((item) => (
+              <option value={item.value} key={item.value}>{item.name}</option>
+            ))}
           </Select>
         </Box>
       ))}
