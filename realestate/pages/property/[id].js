@@ -4,15 +4,33 @@ import { FaBed, FaBath } from 'react-icons/fa'
 import { BsGridFill } from 'react-icons/bs'
 import { GoVerified } from 'react-icons/go'
 import millify from "millify"
+import { FetchApi, baseURL } from '../../utils/fetchapi'
 
-const PropertyDetails = () => {
-  return (
-    <>
-      <Head>
-        <title></title>
-      </Head>
-    </>
-  )
-}
+const PropertyDetails = () => (
+  <>
+    <Box maxWidth="1000px" margin='auto' p='4'>
+
+    </Box>
+  </>
+)
 
 export default PropertyDetails
+
+
+
+export async function getServerSideProps({ params: { id } }) {
+
+  // Getting the query through the URL
+
+  // Use getServerSideProps to fetch data on each request
+
+
+  const data = await FetchApi(`${baseURL}/properties/detail?ExternalID=${id}`)
+
+
+  return {
+    props: {
+      PropertyDetails: data,
+    }
+  }
+}
