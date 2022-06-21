@@ -1,8 +1,17 @@
-import React from 'react'
+import Head from 'next/head'
+import { Box, Flex, Spacer, Text, Avatar } from '@chakra-ui/react'
+import { FaBed, FaBath } from 'react-icons/fa'
+import { BsGridFill } from 'react-icons/bs'
+import { GoVerified } from 'react-icons/go'
+import millify from "millify"
 
 const PropertyDetails = () => {
   return (
-    <div>PropertyDetails</div>
+    <>
+      <Head>
+        <title></title>
+      </Head>
+    </>
   )
 }
 
