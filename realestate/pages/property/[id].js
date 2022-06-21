@@ -5,11 +5,13 @@ import { BsGridFill } from 'react-icons/bs'
 import { GoVerified } from 'react-icons/go'
 import millify from "millify"
 import { FetchApi, baseURL } from '../../utils/fetchapi'
+import ImageScrollbar from '../../components/imagescrollbar/ImageScrollbar'
 
 const PropertyDetails = ({ propertyDetails: { price, rooms, baths, title, rentFrequency, area, agency, isVerified, description, type, purpose, furnishingStatus, amenities, photos } }) => (
   <>
     <Box maxWidth="1000px" margin='auto' p='4'>
-      <h2>Price:{price}</h2>
+      <h2>Price: USD ${millify(price * 0.27)}</h2>
+      {photos && <ImageScrollbar data={photos} />}
       {rooms}
     </Box>
   </>
