@@ -6,16 +6,16 @@ import { GoVerified } from 'react-icons/go'
 import millify from "millify"
 import { FetchApi, baseURL } from '../../utils/fetchapi'
 
-const PropertyDetails = () => (
+const PropertyDetails = ({ propertyDetails: { price, rooms, baths, title, rentFrequency, area, agency, isVerified, description, type, purpose, furnishingStatus, amenities, photos } }) => (
   <>
     <Box maxWidth="1000px" margin='auto' p='4'>
-
+      {price}
+      {rooms}
     </Box>
   </>
 )
 
 export default PropertyDetails
-
 
 
 export async function getServerSideProps({ params: { id } }) {
@@ -30,7 +30,7 @@ export async function getServerSideProps({ params: { id } }) {
 
   return {
     props: {
-      PropertyDetails: data,
+      propertyDetails: data,
     }
   }
 }
