@@ -9,7 +9,7 @@ import { FetchApi, baseURL } from '../../utils/fetchapi'
 const PropertyDetails = ({ propertyDetails: { price, rooms, baths, title, rentFrequency, area, agency, isVerified, description, type, purpose, furnishingStatus, amenities, photos } }) => (
   <>
     <Box maxWidth="1000px" margin='auto' p='4'>
-      {price}
+      <h2>Price:{price}</h2>
       {rooms}
     </Box>
   </>
@@ -25,7 +25,7 @@ export async function getServerSideProps({ params: { id } }) {
   // Use getServerSideProps to fetch data on each request
 
 
-  const data = await FetchApi(`${baseURL}/properties/detail?ExternalID=${id}`)
+  const data = await FetchApi(`${baseURL}/properties/detail?externalID=${id}`)
 
 
   return {
