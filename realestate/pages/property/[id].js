@@ -35,6 +35,12 @@ const PropertyDetails = ({ propertyDetails: { price, rooms, baths, title, rentFr
             {description}
           </Text>
         </Box>
+        <Flex flexWrap='wrap' textTransform='uppercase' justifyContent='space-between'>
+          <Flex justifyContent='space-between' w='400px' borderBottom='1' borderColor='gray.200' p='3'>
+            <Text>Type</Text>
+            <Text fontWeight='bold'>{type}</Text>
+          </Flex>
+        </Flex>
       </Box>
     </Box>
   </>
