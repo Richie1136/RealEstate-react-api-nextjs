@@ -40,6 +40,10 @@ const PropertyDetails = ({ propertyDetails: { price, rooms, baths, title, rentFr
             <Text>Type</Text>
             <Text fontWeight='bold'>{type}</Text>
           </Flex>
+          <Flex justifyContent='space-between' w='400px' borderBottom='1' borderColor='gray.200' p='3'>
+            <Text>Purpose</Text>
+            <Text fontWeight='bold'>{purpose}</Text>
+          </Flex>
         </Flex>
       </Box>
     </Box>
