@@ -15,7 +15,6 @@ const PropertyDetails = ({ propertyDetails: { price, rooms, baths, title, rentFr
       <Box w='full' p="6">
         <Flex paddingTop='2' alignItems='center'>
           <Box paddingRight='3' color='green.400'>
-            {rooms}
             {isVerified && <GoVerified />}
           </Box>
           <Text fontWeight='bold' fontSize='lg'>
@@ -28,9 +27,14 @@ const PropertyDetails = ({ propertyDetails: { price, rooms, baths, title, rentFr
         <Flex alignItems="center" p="1" justifyContent="space-between" w="250px" color="blue.400">
           {rooms}<FaBed /> |  {baths}<FaBath /> | {millify(area)} sqft <BsGridFill />
         </Flex>
-        <Text fontSize="lg">
-          {title.length > 30 ? `${title.substr(0, 30)}...` : title}
-        </Text>
+        <Box marginTop='2'>
+          <Text fontSize="lg" marginBottom='2' fontWeight='bold'>
+            {title}
+          </Text>
+          <Text marginBottom='2' color='gray.600'>
+            {description}
+          </Text>
+        </Box>
       </Box>
     </Box>
   </>
