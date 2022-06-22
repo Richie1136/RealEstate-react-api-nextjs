@@ -25,7 +25,7 @@ const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, 
               USD ${millify(price * 0.27)}{rentFrequency && `/${rentFrequency}`}
             </Text>
           </Flex>
-          <Box >
+          <Box>
             <Avatar size='sm' src={agency?.logo?.url} />
           </Box>
         </Flex>

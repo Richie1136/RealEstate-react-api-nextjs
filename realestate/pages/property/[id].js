@@ -12,7 +12,26 @@ const PropertyDetails = ({ propertyDetails: { price, rooms, baths, title, rentFr
     <Box maxWidth="1000px" margin='auto' p='4'>
       <h2>Price: USD ${millify(price * 0.27)}</h2>
       {photos && <ImageScrollbar data={photos} />}
-      {rooms}
+      <Box w='full' p="6">
+        <Flex paddingTop='2' alignItems='center'>
+          <Box paddingRight='3' color='green.400'>
+            {rooms}
+            {isVerified && <GoVerified />}
+          </Box>
+          <Text fontWeight='bold' fontSize='lg'>
+            Price: USD ${millify(price * 0.27)}
+          </Text>
+          <Box>
+            <Avatar size='sm' src={agency?.logo?.url} />
+          </Box>
+        </Flex>
+        <Flex alignItems="center" p="1" justifyContent="space-between" w="250px" color="blue.400">
+          {rooms}<FaBed /> |  {baths}<FaBath /> | {millify(area)} sqft <BsGridFill />
+        </Flex>
+        <Text fontSize="lg">
+          {title.length > 30 ? `${title.substr(0, 30)}...` : title}
+        </Text>
+      </Box>
     </Box>
   </>
 )
