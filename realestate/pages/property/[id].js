@@ -51,13 +51,22 @@ const PropertyDetails = ({ propertyDetails: { price, rooms, baths, title, rentFr
           )}
         </Flex>
         <Box>
-          {amenities?.length && <Text fontSize='2xl' color='black' marginTop='5'>Amenities</Text>}
+          {amenities?.length && <Text fontSize='2xl' fontWeight='bold' marginTop='5'>Amenities</Text>}
           <Flex flexWrap='wrap'>
             {amenities.map((item) => (
               // Mapping again because the amenities has sub amenities for that
               // specific category
               item.amenities.map((feature) => (
-                <Text key={feature.id}>
+                <Text
+                  key={feature.id}
+                  fontWeight='bold'
+                  color='blue.500'
+                  fontSize='l'
+                  p='2'
+                  background='darkgrey'
+                  m='1'
+                  borderRadius='5'
+                >
                   {feature.text}
                 </Text>
               ))
