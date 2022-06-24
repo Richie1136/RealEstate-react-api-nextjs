@@ -17,7 +17,7 @@ const PropertyDetails = ({ propertyDetails: { price, rooms, baths, title, rentFr
             {isVerified && <GoVerified />}
           </Box>
           <Text fontWeight='bold' fontSize='lg'>
-            Price: USD ${millify(price * 0.27)}
+            USD ${millify(price * 0.27)}
           </Text>
           <Box>
             <Avatar size='sm' src={agency?.logo?.url} />
@@ -58,7 +58,7 @@ const PropertyDetails = ({ propertyDetails: { price, rooms, baths, title, rentFr
               // specific category
               item.amenities.map((feature) => (
                 <Text
-                  key={feature.id}
+                  key={feature.text}
                   fontWeight='bold'
                   color='blue.500'
                   fontSize='l'
