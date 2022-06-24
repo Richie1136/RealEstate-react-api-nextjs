@@ -10,7 +10,6 @@ import ImageScrollbar from '../../components/imagescrollbar/ImageScrollbar'
 const PropertyDetails = ({ propertyDetails: { price, rooms, baths, title, rentFrequency, area, agency, isVerified, description, type, purpose, furnishingStatus, amenities, photos } }) => (
   <>
     <Box maxWidth="1000px" margin='auto' p='4'>
-      <h2>Price: USD ${millify(price * 0.27)}</h2>
       {photos && <ImageScrollbar data={photos} />}
       <Box w='full' p="6">
         <Flex paddingTop='2' alignItems='center'>
@@ -44,7 +43,27 @@ const PropertyDetails = ({ propertyDetails: { price, rooms, baths, title, rentFr
             <Text>Purpose</Text>
             <Text fontWeight='bold'>{purpose}</Text>
           </Flex>
+          {furnishingStatus && (
+            <Flex justifyContent='space-between' w='400px' borderBottom='1' borderColor='gray.200' p='3'>
+              <Text>Furnishing Status</Text>
+              <Text fontWeight='bold'>{furnishingStatus}</Text>
+            </Flex>
+          )}
         </Flex>
+        <Box>
+          {amenities?.length && <Text fontSize='2xl' color='black' marginTop='5'>Amenities</Text>}
+          <Flex flexWrap='wrap'>
+            {amenities.map((item) => (
+              // Mapping again because the amenities has sub amenities for that
+              // specific category
+              item.amenities.map((feature) => (
+                <Text key={feature.id}>
+                  {feature.text}
+                </Text>
+              ))
+            ))}
+          </Flex>
+        </Box>
       </Box>
     </Box>
   </>
