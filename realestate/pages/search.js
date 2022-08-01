@@ -12,7 +12,7 @@ const Search = ({ properties }) => {
   const [searchFilters, setSearchFilters] = useState(false)
 
   const handleClick = () => {
-    setSearchFilters(prevFilter => !prevFilter)
+    setSearchFilters(searchFilters => !searchFilters)
   }
 
   const router = useRouter()

@@ -10,7 +10,7 @@ let defaultImage = 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914
 
 const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, baths, area, agency, isVerified, externalID } }) => (
   // p stands for padding, w stands for width
-  < Link href={`/property/${externalID}`} passHref >
+  <Link href={`/property/${externalID}`} passHref >
     <Flex flexWrap="wrap" w="420px" p="5px" paddingTop="0" justifyContent="flex-start" cursor="pointer">
       <Box>
         <Image src={coverPhoto ? coverPhoto.url : defaultImage} alt='house' width={500} height={500} />

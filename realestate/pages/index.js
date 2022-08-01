@@ -52,23 +52,6 @@ export async function getStaticProps() {
   // you might need to wait for
   // fetch data from an API
 
-  // From the API
-  //   const axios = require("axios");
-
-  // const options = {
-  //   method: 'GET',
-  //   url: 'https://bayut.p.rapidapi.com/properties/list',
-  //   params: {
-  //     locationExternalIDs: '5002,6020',
-  //     purpose: 'for-rent',
-  //     hitsPerPage: '25',
-  //     page: '0',
-  //     lang: 'en',
-  //     sort: 'city-level-score',
-  //     rentFrequency: 'monthly',
-  //     categoryExternalID: '4'
-  //   },
-
   const propertyForSale = await FetchApi(`${baseURL}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`)
   const propertyForRent = await FetchApi(`${baseURL}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`)
 

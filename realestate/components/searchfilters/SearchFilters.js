@@ -16,7 +16,6 @@ const SearchFilters = () => {
   const [search, setSearch] = useState("")
   const [loading, setLoading] = useState(false)
   const router = useRouter()
-  console.log(filterData)
 
 
   const searchProperties = (filterValues) => {
